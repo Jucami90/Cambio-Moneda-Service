@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "7904ecb4-a768-4785-a2cf-370e48ad5754",
+		"name": "Tipo Cambio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20360389"
+	},
+	"item": [
+		{
+			"name": "Lista Monedas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/monedas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"monedas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista Tipos de Cambio",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tipocambios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tipocambios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Realizar Cambio",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"monto\": 150.0,\r\n  \"monedaOrigen\": \"PEN\",\r\n  \"monedaDestino\": \"USD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cambio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cambio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Tipo Cambio",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"monedaOrigen\": {\r\n            \"codMoneda\": \"USD\"\r\n        },\r\n    \"monedaDestino\": {\r\n            \"codMoneda\": \"PEN\"\r\n        },\r\n    \"montoTipoCambio\": 7.0\r\n        \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/actualizar-tipo-cambio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actualizar-tipo-cambio"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
